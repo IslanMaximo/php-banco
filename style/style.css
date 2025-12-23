@@ -1,0 +1,36 @@
+*{
+    padding: 0%;
+}
+body{
+    background-color: grey;
+}
+main{
+    background-color: white;
+    margin: auto;
+    width: 800px;
+    padding: 20px;
+}
+p{
+    text-align: right;
+}
+form{
+    text-align: right;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+img.tamb{
+    width: 50px;
+    margin: 5px;
+}
+
+table tr:nth-child(even){
+    background-color: rgba(194, 194, 194, 0.849);
+}
+table td:nth-child(1){
+    width: 55px;
+}
+table td{
+    padding: 10px;
+}
