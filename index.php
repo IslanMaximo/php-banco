@@ -14,14 +14,15 @@
         <?php
         include_once "include/header.php"; //Cabeçalho
         $o = $_GET['o'] ?? "nome";
-        $q = "SELECT * FROM jogos";
+        $busca = $_GET['busca'] ?? '';
+        $q = "SELECT * FROM jogos j join generos g on j.genero = g.cod join produtoras p on j.produtora = p.cod";
 
         switch($o){
             case "o":
                 $q .= " Order by nome";
                 break;
             case "d":
-                $q .= " Order by produtora";
+                $q .= " Order by p.produtora";
                 break;
             case "na":
                 $q .= " Order by nota desc";
@@ -37,7 +38,7 @@
                 echo "<tr>
                 <td ><img class='tamb' src='fotos/$resultado->capa' alt=''></td>
                 <td><a href= 'descricao.php?cod=$resultado->cod' >$resultado->nome</a>
-                    <br>$resultado->genero
+                    <br>$resultado->genero ($resultado->produtora)
                 </td>
                     </tr>";
             }
